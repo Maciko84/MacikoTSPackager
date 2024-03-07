@@ -1,0 +1,12 @@
+{
+    "name": "@maciko/packager",
+    "version": "1.0.0",
+    "description": "packager for maciko.ts",
+    "main": "packager.js",
+    "scripts": {},
+    "author": "Maciko84",
+    "license": "ISC",
+    "dependencies": {
+        "typescript": "^5.4.2"
+    }
+}
