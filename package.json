@@ -6,6 +6,7 @@
     "scripts": {},
     "author": "Maciko84",
     "license": "ISC",
+    "repository": "https://github.com/Maciko84/MacikoTSPackager",
     "dependencies": {
         "typescript": "^5.4.2"
     }
