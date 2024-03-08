@@ -73,7 +73,9 @@ function _build(pth, dist) {
             },
             CSS: function (css) {
                 const element = document.createElement('style');
-                element.sheet.replaceSync(css);
+                element.type = 'text/css';
+                element.innerHTML = css;
+                document.head.appendChild(element);
             },
             elements: {
                 Img: (url, title) => Maciko.createElement("img", { src: url, title: title ?? "" }),
