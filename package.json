@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "packager for maciko.ts",
     "main": "packager.js",
+    "types": ".d.ts",
     "scripts": {},
     "author": "Maciko84",
     "license": "ISC",
