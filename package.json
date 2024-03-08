@@ -7,6 +7,9 @@
     "author": "Maciko84",
     "license": "ISC",
     "repository": "https://github.com/Maciko84/MacikoTSPackager",
+    "bin": {
+        "MacikoTS-package": "packager.js"
+    },
     "dependencies": {
         "typescript": "^5.4.2"
     }
