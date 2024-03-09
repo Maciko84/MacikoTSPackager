@@ -82,6 +82,18 @@ function _build(pth, dist) {
                 Link: (url, title) => Maciko.createElement("a", { href: url }, title ?? ""),
                 Br: () => Maciko.createElement("br", {}),
                 H: (level, text) => Maciko.createElement("h" + level.toString(), {}, text),
+                P: (...text) => Maciko.createElement("p", {}, ...text),
+                List: function(mode, ...elements) {
+                    let elementName = mode;
+                    let children = [];
+                    elements.forEach(function(element) {
+                        children.push(Maciko.createElement("li", {}, element));
+                    });
+                    if(elementName == "ordered") elementName = "ol";
+                    if(elementName == "unordered") elementName = "ul";
+                    if(!(["ol", "ul"].includes(elementName))) throw new Error("Unsupported element type for list.");
+                    return Maciko.createElement(elementName, {}, children);
+                },
                 media: {
                     yt: (id, width, height) => Maciko.createElement("iframe", {
                         width: width ?? 560,
