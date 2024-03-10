@@ -78,6 +78,14 @@ function _build(pth, dist) {
                 document.head.appendChild(element);
             },
             elements: {
+
+                form: {
+                    Button: (isSubmit, ...text) => Maciko.createElement(isSubmit ? "input" : "button", { type: isSubmit ? "submit" : undefined }, ...text),
+                    Form: (post, ...children) => Maciko.createElement("form", { method: "post", action: post }, ...children),
+                    FieldSet: (legend, ...children) => Maciko.createElement("fieldset", {}, Maciko.createElement("legend", {}, legend), ...children),
+                    Input: (type, name, value) => Maciko.createElement("input", { type: type, name: name, value: value })
+                },
+
                 Img: (url, title) => Maciko.createElement("img", { src: url, title: title ?? "" }),
                 Link: (url, title) => Maciko.createElement("a", { href: url }, title ?? ""),
                 Br: () => Maciko.createElement("br", {}),
